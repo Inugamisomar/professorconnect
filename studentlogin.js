@@ -13,4 +13,12 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     messageEl.style.color = "red";
     messageEl.textContent = "Invalid username or password.";
   }
+  if (username === "2023101784" && password === "student@123!") {
+    messageEl.style.color = "green";
+    messageEl.textContent = "Login successful! Redirecting...";
+    setTimeout(() => window.location.href = "reservation.html", 1500);
+  } else {
+    messageEl.style.color = "red";
+    messageEl.textContent = "Invalid username or password.";
+  }
 });
