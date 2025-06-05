@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Meeting | CampusConnect</title>
+    <link rel="stylesheet" href="reservation.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  </head>
+  <body>
+
+    <!-- Header with logo and profile -->
+    <div style="background-color: #2c00a3; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+      <div style="font-size: 40px; color: white; font-family: 'Orbitron', sans-serif;">
+       <div style="font-size: 20px;">Welcome Back</div>
+      </div>
+      <div style="position: relative;">
+        <img src="icon.png" 
+             id="profileIcon"
+             alt="Profile"
+             style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid white;">
+        <div id="dropdownMenu"
+             style="display: none; position: absolute; right: 0; top: 45px; background: white; color: #2c00a3; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); min-width: 100px; z-index: 10;">
+          <button onclick="logout()" 
+                  style="width: 100%; background: none; border: none; padding: 10px; text-align: left; cursor: pointer; font-weight: bold;">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="CampusConnect_UI.webp" alt="choices">
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h2>Schedule a Meeting</h2>
+        <p>Book an appointment with your faculty member</p>
+      </div>
+
+      <div class="progress-steps">
+        <div>
+          <div class="step-circle active" id="circle-1">1</div>
+          <div class="step-label">Department</div>
+        </div>
+        <div>
+          <div class="step-circle" id="circle-2">2</div>
+          <div class="step-label">Date</div>
+        </div>
+        <div>
+          <div class="step-circle" id="circle-3">3</div>
+          <div class="step-label">Time</div>
+        </div>
+        <div>
+          <div class="step-circle" id="circle-4">4</div>
+          <div class="step-label">Details</div>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-content active" id="step-1">
+        <h3><span class="step-number">1</span> Select Department & Faculty</h3>
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" class="input-field" required>
+            <option value="">Select a department</option>
+            <option value="CAH">College of Allied Health</option>
+            <option value="COA">College of Architecture</option>
+            <option value="CBA">College of Business and Accountancy</option>
+            <option value="CCIT">College of Computing and Information Technologies</option>
+            <option value="CEAS">College of Education, Arts and Sciences</option>
+            <option value="COE">College of Engineering</option>
+            <option value="CTHM">College of Hospitality & Tourism Managemen</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="faculty">Faculty Member</label>
+          <select id="faculty" class="input-field" disabled required>
+            <option value="">Select department first</option>
+          </select>
+        </div>
+        <button class="btn-next" id="next-step-1" disabled>
+          Next
+        </button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-content" id="step-2">
+        <h3><span class="step-number">2</span> Select a Date</h3>
+        <div class="form-group">
+          <input
+            type="text"
+            id="appointment-date"
+            class="input-field"
+            placeholder="Select a date"
+            readonly
+            required
+          />
+        </div>
+        <button class="btn-backs" onclick="goToStep(1)">Back</button>
+        <button class="btn-next" id="next-step-2">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-content" id="step-3">
+        <h3><span class="step-number">3</span> Select a Time</h3>
+        <div class="form-group">
+          <label for="appointment-time">Available Time Slots</label>
+          <select id="appointment-time" class="input-field" required>
+            <option value="">Select a time slot</option>
+            <option value="08:00 AM">08:00AM–10:00AM</option>
+            <option value="09:30 AM">09:30AM–11:30AM</option>
+            <option value="10:00 AM">10:00AM–12:00PM</option>
+            <option value="11:00 AM">11:00AM–01:00PM</option>
+            <option value="12:30 PM">12:30PM–02:30PM</option>
+            <option value="01:00 PM">01:00PM–03:00PM</option>
+            <option value="02:00 PM">02:00PM–04:00PM</option>
+            <option value="03:30 PM">03:30PM–05:30PM</option>
+            <option value="04:00 PM">04:00PM–06:00PM</option>
+            <option value="05:00 PM">05:00PM–07:00PM</option>
+
+          </select>
+        </div>
+        <button class="btn-backs" onclick="goToStep(2)">Back</button>
+        <button class="btn-next" id="next-step-3">Next</button>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-content" id="step-4">
+        <h3><span class="step-number">4</span> Enter Meeting Details</h3>
+        <div class="form-group">
+          <label for="meeting-topic">Meeting Topic</label>
+          <input
+            type="text"
+            id="meeting-topic"
+            class="input-field"
+            placeholder="Enter topic"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="meeting-description">Description</label>
+          <textarea
+            id="meeting-description"
+            class="input-field"
+            rows="4"
+            placeholder="Brief description"
+            required
+          ></textarea>
+        </div>
+         <button class="btn-backs" onclick="goToStep(3)">Back</button>
+        <button class="btn-next" onclick="submitMeeting()">Submit</button>
+      </div>
+    </div>
+
+    <!-- External scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="reservation.js"></script>
+  </body>
+</html>

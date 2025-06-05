@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up | CampusConnect</title>
+<link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div>
+    <div class="image">
+    <img src="CampusConnect_UI.webp" alt="choices">
+</div>
+
+  </div>
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+    <form id="signup-form">
+      <div class="form-group">
+        <label for="username">Student ID</label>
+      <input type="text" id="studentNumber" class="input-field" maxlength="10" required
+       oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+      </div>
+      <div class="form-group">
+  <label for="Name">Full Name</label>
+  <input type="text" id="Name" class="input-field" required
+         oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')">
+</div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="input-field" required />
+      </div>
+      <div>
+         <div class="form-group">
+          <label for="department">Department</label>
+         <select id="department" class="input-field" required>
+      <option value="" disabled selected>Select a College</option>
+      <option value="Allied Health">College of Allied Health</option>
+      <option value="Architecture">College of Architecture</option>
+      <option value="Business">College of Business and Accountancy</option>
+      <option value="Computing">College of Computing and Information Technologies</option>
+      <option value="Education">College of Education, Arts and Sciences</option>
+      <option value="Engineering">College of Engineering</option>
+      <option value="Hospitality">College of Hospitality & Tourism Management</option>
+    </select>
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="input-field" required />
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" class="input-field" required />
+      </div>
+      <button type="submit" class="btn-signup">Sign Up</button>
+    </form>
+    <p id="message" class="message"></p>
+    <p>Already have an account? <a href="index.html">Login here</a></p>
+  </div>
+  <script src="signup.js"></script>
+</body>
+</html>

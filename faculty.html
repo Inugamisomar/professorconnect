@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Dashboard - CampusConnect</title>
+  <link rel="stylesheet" href="Faculty.css" />
+</head>
+ <!-- Top Navigation Bar -->
+<div style="background-color: #2c00a3; color: white; display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; position: relative;">
+  <div style="font-size: 20px;">Welcome Back</div>
+
+  <div style="position: relative;">
+    <!-- Profile Icon -->
+    <img src="icon.jpg" 
+         alt="Profile" 
+         id="profileIcon" 
+         style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">
+
+    <!-- Dropdown Menu -->
+    <div id="dropdownMenu" 
+         style="display: none; position: absolute; right: 0; top: 40px; background: white; color: #2c00a3; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0px 2px 6px rgba(0,0,0,0.2);">
+      <button onclick="logout()" 
+              style="background: none; border: none; padding: 10px 20px; width: 100%; text-align: left; cursor: pointer;">
+        Logout
+      </button>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<body>
+  <div class="image">
+    <img src="CampusConnect_UI.webp" alt="choices">
+  </div>
+
+  <header class="header">
+    <div class="tabs">
+      <button id="requestsTab" class="tab active" onclick="showTab('requests')">Meeting Requests</button>
+      <button id="meetingsTab" class="tab" onclick="showTab('meetings')">My Meetings</button>
+    </div>
+    <div class="profile-circle"></div>
+  </header>
+
+  <main>
+    <!-- Meeting Requests Section -->
+    <section id="requests" class="content-section active">
+      <h2>Pending Requests</h2>
+      <div id="requestsContainer"></div>
+    </section>
+
+    <!-- My Meetings Section -->
+    <section id="meetings" class="content-section">
+      <h2>Meeting Decisions</h2>
+      <div id="meetingsContainer"></div>
+    </section>
+    <script src="faculty.js"></script>
+  </main>
+ 
+
+
+

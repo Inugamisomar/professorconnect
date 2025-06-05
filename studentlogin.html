@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | CampusConnect</title>
+  <link rel="stylesheet" href="studentlogin.css" />
+</head>
+<div class="image">
+<img src="CampusConnect_UI.webp" alt="choices">
+</div>
+<body>
+  <div class="main-container">
+    <div class="login-container">
+      <h2> CampusConnect Student Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" class="input-field" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="input-field" required />
+        </div>
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+      <p id="login-message" class="message"></p>
+      <p class="signup-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+  </div>
+  <script src="studentlogin.js"></script>
+</body>
+
+</html>

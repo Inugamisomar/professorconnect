@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+.header {
+  background-color: #2a059c;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image{
+  height: 150px;
+  background-color: #2a059c;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: monospace;
+
+}
+
+.tabs {
+ padding: 12px 28px;
+  margin-left: 85%;
+  gap: 0.5rem;
+}
+
+.tab {
+  background-color: #190059;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #4b27d8;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Empty.png/120px-Empty.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+main {
+  padding: 2rem;
+}
+
+.content-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.meeting-card {
+  background: #dcdcdc;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.meeting-card p {
+  margin: 0.5rem 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.actions .accept {
+  background-color: #2a059c;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.actions .decline {
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
