@@ -41,6 +41,6 @@ document.getElementById("signup-form").addEventListener("submit", function(event
 
   messageEl.style.color = "green";
   messageEl.textContent = "Account created successfully! Redirecting...";
-  setTimeout(() => window.location.href = "Choice.html", 2000);
+  setTimeout(() => window.location.href = "index.html", 2000);
 
 });
