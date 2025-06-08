@@ -100,7 +100,7 @@ const dummyRequests = [
 
   function logout() {
     alert("Logging out...");
-    window.location.href = "Choice.html"; // Redirect to login
+    window.location.href = "index.html"; // Redirect to login
   }
     // Initial Render
     renderRequests();
